@@ -18,8 +18,7 @@ through a serial interface. The microcontroller sends feedback messages back to 
 dspic30f4011 kit
 </p>
 
-Parametrics
-------------
+### Parametrics
 
 - _CPU Type:_	                dsPIC® DSC
 - _Program Memory Size(KB):_	  48
@@ -29,8 +28,7 @@ Parametrics
 - _Segment LCD:_	              0
 - _LCD/Graphics Interface:_  	No
 
-Peripheral Features
----------------------
+### Peripheral Features
 
 - High current sink/source I/O pins: 25 mA/25 mA
 - Optionally pair up 16-bit timers into 32-bit timer modules
@@ -39,8 +37,7 @@ Peripheral Features
 - Addressable UART modules with FIFO buffers
 - 1 CAN module, 2.0B compliant
 
-Hardware specifications
--------------------------
+## Hardware specifications
 - Each motor can run from -50 to +50 RPMs
 - The motors are controlled through a PWM signal.
 
@@ -49,8 +46,7 @@ Hardware specifications
 - A dead time of at least 3 microseconds should be used to prevent problems with the H-bridge controlling the motors.
 - Running the motors above +-50 RPMs can damage them and should be avoided.
 
-Firmware requirements
------------------------
+## Firmware requirements
 The control systems should compute the desired RPMs of the wheels using a differential drive kinematic model.
 The control system must never generate PWM signals outside of the specifications of the motors.
 
@@ -96,14 +92,12 @@ for the ground vehicle
 
 If the button S6 is pressed again, the data displayed toggles again to the first one.
 
-Messages from the PC
----------------------
+## Messages from the PC
 $HLREF,omega,speed* where omega (rad/s) is the desired angular velocity and speed (m/s) is the desired linear velocity for the robot.
 
 $HLENA* enables the firmware to send references to the motors (to exit safe mode)
 
-Messages to the PC
--------------------
+## Messages to the PC
 $MCFBK,n1,n2,state* where n1 and n2 are the applied RPM values and state is 2 if the microcontroller is in safe mode, 1 if it is in timeout
 mode, 0 otherwise.
 
@@ -114,8 +108,7 @@ $MCTEM,temp* where temp is the temperature
 $MCACK,msg_type,value* where msg_type is the command (e.g. ENA, SAT), and value is 1 if the message was applied and 0 otherwise
 (example: $MCACK,SAT,0* for a negative ack to the saturation command)
 
-Autors and contact
-===================
-- __Ali Yousefi__  *email: <aliy98@outlook.com>
+## Authors and contact
+- __Ali Yousefi__  *email: <aliyousefi98@outlook.com>
 
 - __Mohammad Reza Haji Hosseini__ *email: <mrhhosseini75@gmail.com>
